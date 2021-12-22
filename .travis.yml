@@ -16,7 +16,7 @@ deploy:
   provider: elasticbeanstalk
   region: "ap-northeast-2"
   app: "react1222"
-  env: "React1222-dev"
+  env: "React1222-env"
   bucket_name: "elasticbeanstalk-ap-northeast-2-547401037050"
   bucket_path: "react1222"
   on:
