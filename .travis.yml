@@ -12,5 +12,17 @@ brfore_install:
 script:
   - docker run -e CI=true jinyoung36/react-app npm run test -- --coverage
 
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "react1222"
+  env: "React1222-dev"
+  bucket_name: "elasticbeanstalk-ap-northeast-2-547401037050"
+  bucket_path: "react1222"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+
 after_success:
   - echo "Test Success"
